@@ -6,9 +6,13 @@ Author: BootstrapMade.com
 License: https://bootstrapmade.com/license/
 
 
-about me:
-I am a really curious person who has completed its B.E through mechanical engineering.
-i am working in automobile industry and i love programing in python and innovative machine learning.
-I have done some cources in python and machine learing on coursera 
-jupyter notebook is my weapon of choice 
-My hobbies are simple like traveling,trying new things,going to new places and exploring new things
+techniacl skills:
+I am a very motivated to be a part of india's growing ai ecosystem.I may not have 
+10 years of experience in making full stack ai development but i am highly motivated 
+and want to know more about the fascinating world of AI and ML by being a part of it.
+My goal is to make end to end AI sulution from data collection to processing 
+and feature engenring to feature selection and most important deployment
+Ai is a research field and its constantly evolving and I am trying to 
+impliment some academic technology in business environment. i know python program in 
+jupyter notebook is my weapon of choice and i am good with flask framework and lots python packages 
+like TensorFlow,keras,numpy,pandas,ect.
