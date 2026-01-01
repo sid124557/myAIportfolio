@@ -1,172 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Siddharth Tripathi | Portfolio</title>
 
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Icons (same as before) -->
+<link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet" />
+<link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
+
 <style>
-:root {
-  --bg: #0f172a;
-  --card: #111827;
-  --text: #e5e7eb;
-  --muted: #9ca3af;
-  --accent: #6366f1;
-  --accent-soft: rgba(99,102,241,0.15);
+:root{
+  --bg:#0f172a;
+  --card:#111827;
+  --border:rgba(255,255,255,.08);
+  --text:#e5e7eb;
+  --muted:#9ca3af;
+  --accent:#6366f1;
 }
 
-* {
-  box-sizing: border-box;
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:Inter,system-ui,sans-serif;
+  background:radial-gradient(circle at top,#1e293b,var(--bg));
+  color:var(--text);
+  line-height:1.7;
 }
 
-body {
-  margin: 0;
-  font-family: Inter, system-ui, -apple-system, sans-serif;
-  background: radial-gradient(circle at top, #1e293b, var(--bg));
-  color: var(--text);
-  line-height: 1.6;
+a{color:var(--accent);text-decoration:none}
+img{max-width:100%;border-radius:14px}
+
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:32px 20px;
 }
 
-a {
-  color: var(--accent);
-  text-decoration: none;
+section{margin-top:80px}
+
+h1,h2,h3,h4{font-weight:600}
+h2{font-size:32px;margin-bottom:24px}
+
+p{color:var(--muted)}
+
+.card{
+  background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.01));
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:28px;
+  margin-bottom:24px;
+  box-shadow:0 20px 40px rgba(0,0,0,.35);
 }
 
-.container {
-  max-width: 1100px;
-  margin: auto;
-  padding: 32px 20px;
+.grid{
+  display:grid;
+  gap:24px;
 }
 
-/* ---------- NAV ---------- */
-nav {
-  position: sticky;
-  top: 0;
-  backdrop-filter: blur(12px);
-  background: rgba(15,23,42,0.8);
-  border-bottom: 1px solid rgba(255,255,255,0.05);
-  z-index: 10;
+.grid-2{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+
+.badge{
+  display:inline-block;
+  background:rgba(99,102,241,.15);
+  color:var(--accent);
+  padding:6px 12px;
+  border-radius:999px;
+  font-size:12px;
+  margin:6px 6px 0 0;
 }
 
-.nav-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+/* NAV */
+nav{
+  position:sticky;
+  top:0;
+  z-index:10;
+  backdrop-filter:blur(10px);
+  background:rgba(15,23,42,.85);
+  border-bottom:1px solid var(--border);
 }
 
-.nav-links a {
-  margin-left: 18px;
-  font-size: 14px;
-  color: var(--muted);
+.nav-inner{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 }
 
-.nav-links a:hover {
-  color: white;
+.nav-links a{
+  margin-left:18px;
+  color:var(--muted);
+  font-size:14px;
+}
+.nav-links a:hover{color:#fff}
+
+/* HERO */
+.hero{
+  padding:100px 0 60px;
+}
+.hero h1{
+  font-size:clamp(36px,6vw,56px);
+}
+.hero p{max-width:700px}
+
+/* SKILLS BAR (kept as-is, styled better) */
+.skill{
+  margin-bottom:18px;
+}
+.skill span{
+  display:flex;
+  justify-content:space-between;
+  font-size:14px;
+}
+.bar{
+  height:10px;
+  background:#1f2937;
+  border-radius:10px;
+  overflow:hidden;
+}
+.bar div{
+  height:100%;
+  background:linear-gradient(90deg,var(--accent),#818cf8);
 }
 
-/* ---------- HERO ---------- */
-.hero {
-  padding: 80px 0 60px;
+/* BUTTON */
+.btn{
+  display:inline-block;
+  margin-top:12px;
+  padding:10px 18px;
+  border-radius:10px;
+  background:var(--accent);
+  color:white;
+  font-size:14px;
 }
 
-.hero h1 {
-  font-size: clamp(32px, 5vw, 52px);
-  margin-bottom: 12px;
+/* FOOTER */
+footer{
+  margin-top:100px;
+  padding:40px 0;
+  border-top:1px solid var(--border);
+  text-align:center;
+  color:var(--muted);
 }
 
-.hero p {
-  max-width: 600px;
-  color: var(--muted);
-}
-
-.hero .tags span {
-  display: inline-block;
-  background: var(--accent-soft);
-  color: var(--accent);
-  padding: 6px 12px;
-  border-radius: 999px;
-  font-size: 12px;
-  margin: 8px 8px 0 0;
-}
-
-/* ---------- SECTIONS ---------- */
-section {
-  margin-top: 72px;
-}
-
-.section-title {
-  font-size: 28px;
-  margin-bottom: 24px;
-}
-
-/* ---------- CARDS ---------- */
-.grid {
-  display: grid;
-  gap: 24px;
-}
-
-.grid-2 {
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-}
-
-.card {
-  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0));
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 16px;
-  padding: 24px;
-  transition: transform .25s ease, box-shadow .25s ease;
-}
-
-.card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 16px 40px rgba(0,0,0,0.4);
-}
-
-.card h3 {
-  margin-top: 0;
-}
-
-.badge {
-  display: inline-block;
-  font-size: 12px;
-  padding: 4px 10px;
-  background: var(--accent-soft);
-  color: var(--accent);
-  border-radius: 999px;
-  margin: 6px 6px 0 0;
-}
-
-/* ---------- BUTTON ---------- */
-.btn {
-  display: inline-block;
-  margin-top: 14px;
-  padding: 10px 16px;
-  border-radius: 10px;
-  background: var(--accent);
-  color: white;
-  font-size: 14px;
-  border: none;
-  cursor: pointer;
-}
-
-.btn:hover {
-  opacity: 0.9;
-}
-
-/* ---------- FOOTER ---------- */
-footer {
-  margin-top: 80px;
-  padding: 40px 0;
-  border-top: 1px solid rgba(255,255,255,0.08);
-  color: var(--muted);
-  text-align: center;
-}
-
-/* ---------- RESPONSIVE ---------- */
-@media (max-width: 600px) {
-  .nav-links {
-    display: none;
-  }
+@media(max-width:700px){
+  .nav-links{display:none}
 }
 </style>
 </head>
@@ -177,9 +158,10 @@ footer {
   <div class="container nav-inner">
     <strong>Siddharth Tripathi</strong>
     <div class="nav-links">
+      <a href="#about">About</a>
       <a href="#skills">Skills</a>
+      <a href="#resume">Resume</a>
       <a href="#projects">Projects</a>
-      <a href="#experience">Experience</a>
       <a href="#contact">Contact</a>
     </div>
   </div>
@@ -187,135 +169,140 @@ footer {
 
 <div class="container">
 
-  <!-- HERO -->
-  <section class="hero">
-    <h1>Machine Learning Engineer</h1>
-    <p>
-      Mechanical Engineer turned AI engineer.  
-      I build applied ML systems — from data collection to deployment —
-      with strong interest in NLP, Computer Vision, and real-world AI.
-    </p>
+<!-- HERO -->
+<section class="hero">
+  <h1>Siddharth Tripathi</h1>
+  <p>
+    I'm <strong>Really Curious</strong>, a Mechanical Engineer, a Data Scientist,
+    an Innovator, a Machine Learning Engineer, a Programmer.
+  </p>
 
-    <div class="tags">
-      <span>Python</span>
-      <span>Machine Learning</span>
-      <span>Computer Vision</span>
-      <span>NLP</span>
-      <span>Automotive</span>
-    </div>
-  </section>
+  <div style="margin-top:16px">
+    <a href="https://twitter.com/sid124557" class="badge">Twitter</a>
+    <a href="https://www.facebook.com/siddharth.tripathi.9083" class="badge">Facebook</a>
+    <a href="https://www.instagram.com/u_r__ugly__but__i__/" class="badge">Instagram</a>
+    <a href="linkedin.com/in/siddharth-tripathi-4aaa8a15b" class="badge">LinkedIn</a>
+  </div>
+</section>
 
-  <!-- SKILLS -->
-  <section id="skills">
-    <h2 class="section-title">Skills</h2>
-    <div class="grid grid-2">
-      <div class="card">
-        <h3>Core</h3>
-        <span class="badge">Python</span>
-        <span class="badge">TensorFlow</span>
-        <span class="badge">Keras</span>
-        <span class="badge">Pandas</span>
-        <span class="badge">NumPy</span>
-        <span class="badge">Flask</span>
-      </div>
-
-      <div class="card">
-        <h3>ML Focus</h3>
-        <span class="badge">NLP</span>
-        <span class="badge">Computer Vision</span>
-        <span class="badge">CNN</span>
-        <span class="badge">LSTM</span>
-        <span class="badge">Transfer Learning</span>
-        <span class="badge">Feature Engineering</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROJECTS -->
-  <section id="projects">
-    <h2 class="section-title">Projects</h2>
-    <div class="grid grid-2">
-
-      <div class="card">
-        <h3>Face Expression Detection</h3>
-        <p>Real-time facial emotion recognition using VGG transfer learning.</p>
-        <span class="badge">Keras</span>
-        <span class="badge">OpenCV</span>
-        <span class="badge">Deep Learning</span>
-        <br>
-        <a class="btn" href="https://github.com/sid124557/face_expresion_detection" target="_blank">
-          View Code
-        </a>
-      </div>
-
-      <div class="card">
-        <h3>Face Mask Detector</h3>
-        <p>High-accuracy real-time mask detection system for CCTV & IoT use cases.</p>
-        <span class="badge">CNN</span>
-        <span class="badge">Computer Vision</span>
-        <span class="badge">Keras</span>
-        <br>
-        <a class="btn" href="https://github.com/sid124557/face_mask_detection" target="_blank">
-          View Code
-        </a>
-      </div>
-
-      <div class="card">
-        <h3>LinkedIn Job Scraper</h3>
-        <p>Extracted job skills to analyze hiring trends using Selenium + NLP.</p>
-        <span class="badge">Web Scraping</span>
-        <span class="badge">Selenium</span>
-        <span class="badge">Data Analysis</span>
-      </div>
-
-      <div class="card">
-        <h3>NLP Spam Classifier</h3>
-        <p>SMS spam detection using Naive Bayes and NLP pipelines.</p>
-        <span class="badge">NLP</span>
-        <span class="badge">Scikit-learn</span>
-        <span class="badge">Text Classification</span>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- EXPERIENCE -->
-  <section id="experience">
-    <h2 class="section-title">Experience</h2>
+<!-- ABOUT -->
+<section id="about">
+  <h2>About Me</h2>
+  <div class="grid grid-2">
+    <img src="assets/img/profile-img.jpg" alt="">
     <div class="card">
-      <h3>Graduate Engineer Trainee — UNOMINDA</h3>
       <p>
-        Process engineering, assembly line setup, PFMEA, OGS documentation,
-        SAP procurement, and vendor coordination.
+        I am a really curious person who has completed his B.E through mechanical
+        engineering. I am working in the Automobile Industry and I love programing
+        in python and innovative machine learning. I have done some courses in
+        python and machine learning on coursera. Jupyter Notebook is my weapon of
+        choice. My hobbies are simple like traveling, trying new things, going to
+        new places and exploring new things.
       </p>
-      <span class="badge">Manufacturing</span>
-      <span class="badge">Automotive</span>
-      <span class="badge">Process Engineering</span>
+      <p>
+        Programming taught me never to give up if things don't work out first time,
+        and to just keep trying again and again with different solutions and ask
+        others how can they help me solve the problem.
+      </p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- CONTACT -->
-  <section id="contact">
-    <h2 class="section-title">Contact</h2>
-    <div class="card">
-      <p>Email: <strong>sid124557@gmail.com</strong></p>
-      <p>Location: India</p>
-      <a class="btn" href="mailto:sid124557@gmail.com">Send Email</a>
+<!-- SKILLS -->
+<section id="skills">
+  <h2>Technical Skills</h2>
+  <div class="card">
+    <div class="skill">
+      <span>Python <i>90%</i></span>
+      <div class="bar"><div style="width:90%"></div></div>
     </div>
-  </section>
+    <div class="skill">
+      <span>Data cleaning <i>70%</i></span>
+      <div class="bar"><div style="width:70%"></div></div>
+    </div>
+    <div class="skill">
+      <span>Tensorflow <i>85%</i></span>
+      <div class="bar"><div style="width:85%"></div></div>
+    </div>
+    <div class="skill">
+      <span>Feature Engineering <i>90%</i></span>
+      <div class="bar"><div style="width:90%"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- RESUME -->
+<section id="resume">
+  <h2>Resume</h2>
+  <div class="grid grid-2">
+    <div class="card">
+      <h3>Education</h3>
+      <p>
+        <strong>Bachelor of Engineering – Mechanical</strong><br>
+        Don Bosco Institute of Technology, Bangalore (2014–2018)
+      </p>
+      <p>
+        Wendy High School, Kanpur (ISC) – 10th & 12th – 75%
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Professional Experience</h3>
+      <p>
+        <strong>Graduate Engineering Trainee – UNOMINDA</strong><br>
+        Process engineering, assembly line setup, PFMEA, OGS, SAP procurement,
+        vendor coordination.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="grid grid-2">
+
+    <div class="card">
+      <h4>Face Expression Detection</h4>
+      <p>
+        Real-time emotion detection using Keras and VGG transfer learning.
+        Accuracy ~70%.
+      </p>
+      <a class="btn" href="https://github.com/sid124557/face_expresion_detection" target="_blank">View Code</a>
+    </div>
+
+    <div class="card">
+      <h4>Face Mask Detector</h4>
+      <p>
+        CNN-based mask detection system with high accuracy for CCTV & IoT.
+      </p>
+      <a class="btn" href="https://github.com/sid124557/face_mask_detection" target="_blank">View Code</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2>Contact</h2>
+  <div class="card">
+    <p>Email: <strong>sid124557@gmail.com</strong></p>
+    <p>Phone: <strong>+91 6394637912</strong></p>
+    <p>Location: Haryana, Uttar Pradesh, Bangalore</p>
+  </div>
+</section>
 
 </div>
 
 <footer>
-  © 2026 Siddharth Tripathi · Built with plain HTML, CSS & JS
+  © 2026 Siddharth Tripathi — Thank you for visiting
 </footer>
 
 <script>
-// simple fade-in on load
-document.body.style.opacity = 0;
-window.onload = () => {
-  document.body.style.transition = "opacity 1s";
-  document.body.style.opacity = 1;
+document.body.style.opacity=0;
+window.onload=()=>{
+  document.body.style.transition="opacity 1s";
+  document.body.style.opacity=1;
 };
 </script>
 
